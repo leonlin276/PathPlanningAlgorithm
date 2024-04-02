@@ -1,21 +1,21 @@
-Map = struct;       %¶¨Òåstruct±äÁ¿Map¼ÇÂ¼Æðµã£¬ÖÕµã×ø±ê
-PicPath = 'D:\leonlin276\Desktop\SRTP\Projects_Main\TestPic\25_25_m_6.png';     %µØÍ¼Í¼Æ¬Î»ÖÃ
-IfPlot = true;      %ÊÇ·ñÕ¹Ê¾ËÑÑ°¹ý³Ì
-PlotPausetime = 0;      %Õ¹Ê¾Ê±Í£ÁôÊ±¼ä
-LengthofMesh = 0.4;       %Íø¸ñ¾«¶È£¬m
-FullLengthofPic = 25;       %µØÍ¼Êµ¼Ê¶ÔÓ¦ÇøÓò³ß´ç£¬m
+Map = struct;       %ï¿½ï¿½ï¿½ï¿½structï¿½ï¿½ï¿½ï¿½Mapï¿½ï¿½Â¼ï¿½ï¿½ã£¬ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½
+PicPath = 'TestPic\25_25_m_6.png';     %ï¿½ï¿½Í¼Í¼Æ¬Î»ï¿½ï¿½
+IfPlot = true;      %ï¿½Ç·ï¿½Õ¹Ê¾ï¿½ï¿½Ñ°ï¿½ï¿½ï¿½ï¿½
+PlotPausetime = 0;      %Õ¹Ê¾Ê±Í£ï¿½ï¿½Ê±ï¿½ï¿½
+LengthofMesh = 0.4;       %ï¿½ï¿½ï¿½ñ¾«¶È£ï¿½m
+FullLengthofPic = 25;       %ï¿½ï¿½Í¼Êµï¿½Ê¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ß´ç£¬m
 
-[MAP] = CreateMap(PicPath,LengthofMesh,FullLengthofPic);       %Í¨¹ýº¯ÊýÉú³ÉÊµÑéÊ¹ÓÃµÄÕ¤¸ñµØÍ¼
-[xStart,yStart,MAP,Map] = SetStartPoint(MAP,Map);       %µã»÷Éè¶¨ÆðÊ¼µã
-[xTarget,yTarget,MAP,Map] = SetAimPoint(xStart,yStart,MAP,Map);     %µã»÷Éè¶¨ÖÕµã
+[MAP] = CreateMap(PicPath,LengthofMesh,FullLengthofPic);       %Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ê¹ï¿½Ãµï¿½Õ¤ï¿½ï¿½ï¿½Í¼
+[xStart,yStart,MAP,Map] = SetStartPoint(MAP,Map);       %ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Ê¼ï¿½ï¿½
+[xTarget,yTarget,MAP,Map] = SetAimPoint(xStart,yStart,MAP,Map);     %ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½Õµï¿½
 [Obstacle] = FindObstacle(MAP);
 t = 0;
 t1 = clock;
-Path = AStar(Obstacle,Map,PlotPausetime,IfPlot);     %A*Ëã·¨
+Path = AStar(Obstacle,Map,PlotPausetime,IfPlot);     %A*ï¿½ã·¨
 t2 = clock;
 t = t + etime(t2, t1)
 
-%»­³öÂ·¾¶
+%ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 if length(Path)>=1
     plot(Path(:,1),Path(:,2),'-c','LineWidth',2);hold on;
 end
