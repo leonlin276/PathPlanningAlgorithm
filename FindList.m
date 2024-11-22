@@ -1,38 +1,38 @@
 function [flag,targetInd]=FindList(m,open,close)
 %{
-º¯Êı¹¦ÄÜ£º
-Èç¹ûÏàÁÚ½Úµã(m´æ´¢ÆäĞÅÏ¢)  ÒÑ¾­ÔÚCloselistÖĞ£¬Ôòflag = 1  targetInd = ÆäËùÔÚcloseµÄĞĞÊı£¬ÓÃÀ´¶¨Î»
-Èç¹ûÏàÁÚ½Úµã(m´æ´¢ÆäĞÅÏ¢)    ²»ÔÚOpenlist ÖĞ£¬Ôòflag = 2  targetInd = []
-Èç¹ûÏàÁÚ½Úµã(m´æ´¢ÆäĞÅÏ¢)  ÒÑ¾­ÔÚOpenlist ÖĞ£¬Ôòflag = 3  targetInd = ÆäËùÔÚopenµÄĞĞÊı£¬ÓÃÀ´¶¨Î»
+å‡½æ•°åŠŸèƒ½ï¼š
+å¦‚æœç›¸é‚»èŠ‚ç‚¹(må­˜å‚¨å…¶ä¿¡æ¯)  å·²ç»åœ¨Closelistä¸­ï¼Œåˆ™flag = 1  targetInd = å…¶æ‰€åœ¨closeçš„è¡Œæ•°ï¼Œç”¨æ¥å®šä½
+å¦‚æœç›¸é‚»èŠ‚ç‚¹(må­˜å‚¨å…¶ä¿¡æ¯)    ä¸åœ¨Openlist ä¸­ï¼Œåˆ™flag = 2  targetInd = []
+å¦‚æœç›¸é‚»èŠ‚ç‚¹(må­˜å‚¨å…¶ä¿¡æ¯)  å·²ç»åœ¨Openlist ä¸­ï¼Œåˆ™flag = 3  targetInd = å…¶æ‰€åœ¨opençš„è¡Œæ•°ï¼Œç”¨æ¥å®šä½
 %}
 
-%Èç¹ûopenlistÎª¿Õ£¬ÔòÒ»¶¨²»ÔÚopenlistÖĞ
+%å¦‚æœopenlistä¸ºç©ºï¼Œåˆ™ä¸€å®šä¸åœ¨openlistä¸­
 if  isempty(open)
     flag = 2;
     targetInd = [];
     
-else  %open²»Îª¿ÕÊ±£¬ĞèÒª¼ì²éÊÇ·ñÔÚopenlistÖĞ
-    %±éÀúopenlist£¬¼ì²éÊÇ·ñÔÚopenlistÖĞ
+else  %openä¸ä¸ºç©ºæ—¶ï¼Œéœ€è¦æ£€æŸ¥æ˜¯å¦åœ¨openlistä¸­
+    %éå†openlistï¼Œæ£€æŸ¥æ˜¯å¦åœ¨openlistä¸­
     for io = 1:length(open(:,1))
-        if isequal(  m(1:2) , open(io,1:2)  )  %ÔÚOpenlistÖĞ
+        if isequal(  m(1:2) , open(io,1:2)  )  %åœ¨Openlistä¸­
             flag = 3;
             targetInd = io;
             return;
-        else  %²»ÔÚOpenlistÖĞ
+        else  %ä¸åœ¨Openlistä¸­
             flag = 2;
             targetInd = [];
         end
     end
 end
 
-%Èç¹ûÄÜµ½ÕâÒ»²½£¬ÔòÒ»¶¨²»ÔÚOpenlistÖĞ£¬ÄÇÃ´ĞèÒªÅĞ¶ÏÊÇ·ñÔÚcloselistÖĞ
+%å¦‚æœèƒ½åˆ°è¿™ä¸€æ­¥ï¼Œåˆ™ä¸€å®šä¸åœ¨Openlistä¸­ï¼Œé‚£ä¹ˆéœ€è¦åˆ¤æ–­æ˜¯å¦åœ¨closelistä¸­
 
-%±éÀúCloselist£¨×¢Òâcloselist²»¿ÉÄÜÎª¿Õ£©
+%éå†Closelistï¼ˆæ³¨æ„closelistä¸å¯èƒ½ä¸ºç©ºï¼‰
 for ic = 1:length(close(:,1))
-    if isequal(  m(1:2) , close(ic,1:2)  )  %ÔÚCloselistÖĞ
+    if isequal(  m(1:2) , close(ic,1:2)  )  %åœ¨Closelistä¸­
         flag = 1;
         targetInd = ic;
-        return;%ÔÚCloselistÖĞÖ±½Óreturn
+        return;%åœ¨Closelistä¸­ç›´æ¥return
     end
 end
 

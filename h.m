@@ -1,8 +1,8 @@
 function hcost = h( m,goal )
 
-%Å·¼¸ÀïµÃÆô·¢º¯Êý
+%æ¬§å‡ é‡Œå¾—å¯å‘å‡½æ•°
 hcost=10*(sqrt((m(1)-goal(1))^2+(m(2)-goal(2))^2));
-%¼ÆËãÆô·¢º¯Êý´ú¼ÛÖµ £¬ÕâÀï²ÉÓÃÂü¹þ¶ÙËã·¨
-%ÁíÒ»ÖÖÊÇÅ·Ê½¾àÀëhcost =10* abs(  m(1)-goal(1)  )+10*abs(  m(2)-goal(2)  );´Ë´¦²»²ÉÓÃ
+%è®¡ç®—å¯å‘å‡½æ•°ä»£ä»·å€¼ ï¼Œè¿™é‡Œé‡‡ç”¨æ›¼å“ˆé¡¿ç®—æ³•
+%å¦ä¸€ç§æ˜¯æ¬§å¼è·ç¦»hcost =10* abs(  m(1)-goal(1)  )+10*abs(  m(2)-goal(2)  );æ­¤å¤„ä¸é‡‡ç”¨
 
 end

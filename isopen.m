@@ -1,17 +1,17 @@
 function [isopenFlag,Id] = isopen( node,open )
 
-%ÅĞ¶Ï½ÚµãÊÇ·ñÔÚopenÁĞ±íÖĞ£¬ÔÚopenÖĞ£¬isopenFlag = 1,²»ÔÚopenÖĞ£¬isopenFlag = 0 .²¢·´»ØË÷ÒıºÅ
+%åˆ¤æ–­èŠ‚ç‚¹æ˜¯å¦åœ¨openåˆ—è¡¨ä¸­ï¼Œåœ¨openä¸­ï¼ŒisopenFlag = 1,ä¸åœ¨openä¸­ï¼ŒisopenFlag = 0 .å¹¶åå›ç´¢å¼•å·
 
 isopenFlag = 0;
 Id = 0;
 
-%Èç¹ûopenÁĞ±íÎª¿Õ£¬Ôò²»ÔÚopenÁĞ±íÖĞ
+%å¦‚æœopenåˆ—è¡¨ä¸ºç©ºï¼Œåˆ™ä¸åœ¨openåˆ—è¡¨ä¸­
 if  isempty(open)
     isopenFlag = 0;
 
-else %openÁĞ±í²»Îª¿ÕÊ±	
+else %openåˆ—è¡¨ä¸ä¸ºç©ºæ—¶	
     for i = 1:length( open(:,1) )
-       if isequal(  node(1:2) , open(i,1:2)  )  %ÔÚOpenlistÖĞ
+       if isequal(  node(1:2) , open(i,1:2)  )  %åœ¨Openlistä¸­
             isopenFlag = 1;
             Id = i;
             return;

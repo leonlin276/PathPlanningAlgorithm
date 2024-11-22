@@ -3,7 +3,7 @@ function  plot_map(open,close,PlotPausetime,flag)
 if flag == true
     plot(close(:,1),close(:,2),'sr','MarkerFaceColor','r');
     
-    pause(PlotPausetime);%ÏÔÊ¾±éÀú¹ı³Ì,PlotPausetimeÎªÔİÍ£Ê±¼ä
+    pause(PlotPausetime);%æ˜¾ç¤ºéå†è¿‡ç¨‹,PlotPausetimeä¸ºæš‚åœæ—¶é—´
     plot(open(:,1),open(:,2),'sg','MarkerFaceColor','b');
     pause(PlotPausetime);
     

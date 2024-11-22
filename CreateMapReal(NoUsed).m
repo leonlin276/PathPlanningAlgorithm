@@ -1,24 +1,24 @@
 function J = CreateMapReal(PicPath)
-% ¶ÁÈëÍ¼Æ¬  ¿ÉÒÔÓÃ¾ø¶ÔÂ·¾¶£¬Ò²¿ÉÒÔÓÃÏà¶ÔÂ·¾¶   Â·¾¶ÓÃµ¥ÒıºÅ
+% è¯»å…¥å›¾ç‰‡  å¯ä»¥ç”¨ç»å¯¹è·¯å¾„ï¼Œä¹Ÿå¯ä»¥ç”¨ç›¸å¯¹è·¯å¾„   è·¯å¾„ç”¨å•å¼•å·
 Img=imread(PicPath);
-% ½«Í¼Æ¬×ªÎª»Ò¶ÈÍ¼
-% ²Î¿¼Á´½Ó£ºhttps://ww2.mathworks.cn/help/matlab/ref/rgb2gray.html  
+% å°†å›¾ç‰‡è½¬ä¸ºç°åº¦å›¾
+% å‚è€ƒé“¾æ¥ï¼šhttps://ww2.mathworks.cn/help/matlab/ref/rgb2gray.html  
 I = rgb2gray(Img);
-% ÉèÖÃÍø¸ñ¸ñÊı a±íÊ¾ºáÖá b±íÊ¾×İÖá
+% è®¾ç½®ç½‘æ ¼æ ¼æ•° aè¡¨ç¤ºæ¨ªè½´ bè¡¨ç¤ºçºµè½´
 a=20;
 b=20;
-% Íø¸ñ±ß³¤  Ò²¾ÍÊÇÃ¿Ò»¸öĞ¡ºÚ¿éµÄ×îĞ¡Õ¼µÄ³¤¿í   Èç¹ûÉèÖÃÎª5  ÄÇÃ´¾Í´ú±í×îĞ¡µÄĞ¡ºÚ¿éÕ¼µÄ´óĞ¡Îª5*5=25¸ö¸ñ×Ó
+% ç½‘æ ¼è¾¹é•¿  ä¹Ÿå°±æ˜¯æ¯ä¸€ä¸ªå°é»‘å—çš„æœ€å°å çš„é•¿å®½   å¦‚æœè®¾ç½®ä¸º5  é‚£ä¹ˆå°±ä»£è¡¨æœ€å°çš„å°é»‘å—å çš„å¤§å°ä¸º5*5=25ä¸ªæ ¼å­
 length=1;
-%   ½«Êı×Ö¾ØÕó×ªÎª¹æ¶¨µÄ´óĞ¡
-% B = imresize(A,[numrows numcols]) ·µ»ØÍ¼Ïñ B£¬ÆäĞĞÊıºÍÁĞÊıÓÉ¶şÔªËØÏòÁ¿ [numrows numcols] Ö¸¶¨¡£
-% BÊÇÒ»¸ö50*50µÄ¾ØÕó£¬¸Ã¾ØÕóÖĞ£¬×î´óÖµÎª255£¨±íÊ¾°×É«£©£¬×îĞ¡ÖµÎª0£¨±íÊ¾ºÚÉ«£©
-% ²Î¿¼Á´½Ó£ºhttps://ww2.mathworks.cn/help/matlab/ref/imresize.html?searchHighlight=imresize&s_tid=srchtitle
+%   å°†æ•°å­—çŸ©é˜µè½¬ä¸ºè§„å®šçš„å¤§å°
+% B = imresize(A,[numrows numcols]) è¿”å›å›¾åƒ Bï¼Œå…¶è¡Œæ•°å’Œåˆ—æ•°ç”±äºŒå…ƒç´ å‘é‡ [numrows numcols] æŒ‡å®šã€‚
+% Bæ˜¯ä¸€ä¸ª50*50çš„çŸ©é˜µï¼Œè¯¥çŸ©é˜µä¸­ï¼Œæœ€å¤§å€¼ä¸º255ï¼ˆè¡¨ç¤ºç™½è‰²ï¼‰ï¼Œæœ€å°å€¼ä¸º0ï¼ˆè¡¨ç¤ºé»‘è‰²ï¼‰
+% å‚è€ƒé“¾æ¥ï¼šhttps://ww2.mathworks.cn/help/matlab/ref/imresize.html?searchHighlight=imresize&s_tid=srchtitle
 B = imresize(I,[a/length b/length]);
-% J=floor(B/255)±íÊ¾ÏòÏÂÈ¡Õû   Ğ¡ÓÚ»òµÈÓÚ¸ÃÔªËØµÄ×î½Ó½üÕûÊı
-% B/255±íÊ¾ BÖĞµÄÃ¿Ò»¸öÔªËØ¶¼³ıÒÔ255£¬Ğ¡ÓÚ255µÄÊı×Ö³ıÒÔ255µÈÓÚ0£¨ºÚÉ«£©£¬µÈÓÚ255µÄÊı×Ö³ıÒÔ255µÈÓÚ1£¨°×É«£©
-% µ±È»Õâ¸öµØ·½Ò²¿ÉÒÔ²»³ıÒÔ255£¬¶øÊÇÆäËûÊı×Ö£¬µ±È»Ğ§¹û¾Í»á²»Ò»Ñù
-% ÕâĞĞ´úÂëµÄÒâË¼ÊÇ£¬½«ÕÏ°­ÎïËùÔÚ¾ØÕó×ªÎª0£¨ºÚÉ«£©£¬ÆäÓàÇøÓòÎª1.Ò²¿É×Ô¼º½«Æä¸ÄÎªÕÏ°­ÎïÎª1£¬¿ÉĞĞÓòÎª0.
-% ²Î¿¼Á´½Ó£ºhttps://ww2.mathworks.cn/help/matlab/ref/floor.html?searchHighlight=floor&s_tid=srchtitle
+% J=floor(B/255)è¡¨ç¤ºå‘ä¸‹å–æ•´   å°äºæˆ–ç­‰äºè¯¥å…ƒç´ çš„æœ€æ¥è¿‘æ•´æ•°
+% B/255è¡¨ç¤º Bä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ éƒ½é™¤ä»¥255ï¼Œå°äº255çš„æ•°å­—é™¤ä»¥255ç­‰äº0ï¼ˆé»‘è‰²ï¼‰ï¼Œç­‰äº255çš„æ•°å­—é™¤ä»¥255ç­‰äº1ï¼ˆç™½è‰²ï¼‰
+% å½“ç„¶è¿™ä¸ªåœ°æ–¹ä¹Ÿå¯ä»¥ä¸é™¤ä»¥255ï¼Œè€Œæ˜¯å…¶ä»–æ•°å­—ï¼Œå½“ç„¶æ•ˆæœå°±ä¼šä¸ä¸€æ ·
+% è¿™è¡Œä»£ç çš„æ„æ€æ˜¯ï¼Œå°†éšœç¢ç‰©æ‰€åœ¨çŸ©é˜µè½¬ä¸º0ï¼ˆé»‘è‰²ï¼‰ï¼Œå…¶ä½™åŒºåŸŸä¸º1.ä¹Ÿå¯è‡ªå·±å°†å…¶æ”¹ä¸ºéšœç¢ç‰©ä¸º1ï¼Œå¯è¡ŒåŸŸä¸º0.
+% å‚è€ƒé“¾æ¥ï¼šhttps://ww2.mathworks.cn/help/matlab/ref/floor.html?searchHighlight=floor&s_tid=srchtitle
 J=floor(B/255);
 J=double(J);
 J = ones(size(J)) - J;
@@ -26,37 +26,37 @@ J = ones(size(J)) - J;
 
 
 
-% % GridLineStyle±íÊ¾Õ¤¸ñÍ¼ -±íÊ¾Ê¹ÓÃÊµÏß»­  --±íÊ¾Ê¹ÓÃĞéÏß»­ »¹¿ÉÒÔÊ¹ÓÃ{:} »òÕß  -.
-% % ²Î¿¼Á´½Ó£ºhttps://ww2.mathworks.cn/help/matlab/ref/axes.html?searchHighlight=axes&s_tid=srchtitle
+% % GridLineStyleè¡¨ç¤ºæ …æ ¼å›¾ -è¡¨ç¤ºä½¿ç”¨å®çº¿ç”»  --è¡¨ç¤ºä½¿ç”¨è™šçº¿ç”» è¿˜å¯ä»¥ä½¿ç”¨{:} æˆ–è€…  -.
+% % å‚è€ƒé“¾æ¥ï¼šhttps://ww2.mathworks.cn/help/matlab/ref/axes.html?searchHighlight=axes&s_tid=srchtitle
 % % https://www.cnblogs.com/mphyfin/archive/2011/12/26/2302232.html
 % axes('GridLineStyle', '-');
-% % set(gca,'ydir','reverse')µÄº¬Òå²Î¿¼Á´½Ó£ºhttps://blog.csdn.net/Suii_v5/article/details/78728873
-% % ÎªÊ²Ã´ĞèÒª×ö×ø±ê×ª»»ÄØ???
-% % y×ø±êµ÷»»
+% % set(gca,'ydir','reverse')çš„å«ä¹‰å‚è€ƒé“¾æ¥ï¼šhttps://blog.csdn.net/Suii_v5/article/details/78728873
+% % ä¸ºä»€ä¹ˆéœ€è¦åšåæ ‡è½¬æ¢å‘¢???
+% % yåæ ‡è°ƒæ¢
 % set(gca,'ydir','reverse');
-% %x×ø±êµ÷»»
+% %xåæ ‡è°ƒæ¢
 % set(gca,'xdir');
-% % hold on×÷ÓÃ£ºhttps://jingyan.baidu.com/article/2009576160a9158a0721b495.html
-% % hold on£º±£³ÖÔ­Í¼²¢½ÓÊÜ´Ëºó»æÖÆµÄĞÂµÄÇúÏß£¬µş¼Ó»æÍ¼
-% % hold off£ºÖØĞÂË¢ĞÂÍ¼ĞÎ´°¿Ú£¬»æÖÆĞÂµÄÇúÏß
+% % hold onä½œç”¨ï¼šhttps://jingyan.baidu.com/article/2009576160a9158a0721b495.html
+% % hold onï¼šä¿æŒåŸå›¾å¹¶æ¥å—æ­¤åç»˜åˆ¶çš„æ–°çš„æ›²çº¿ï¼Œå åŠ ç»˜å›¾
+% % hold offï¼šé‡æ–°åˆ·æ–°å›¾å½¢çª—å£ï¼Œç»˜åˆ¶æ–°çš„æ›²çº¿
 % hold on
-% % grid on×÷ÓÃ£ºÔÚ»­Í¼µÄÊ±ºòÌí¼ÓÍø¸ñÏß
+% % grid onä½œç”¨ï¼šåœ¨ç”»å›¾çš„æ—¶å€™æ·»åŠ ç½‘æ ¼çº¿
 % grid on
-% % »­Í¼
+% % ç”»å›¾
 % axis([0,a,0,b]);
-% % gca±íÊ¾µ±Ç°»æÍ¼ÇøÓò
-% % xtick±íÊ¾xÖá×ø±ê¿Ì¶È£¬¿Ì¶ÈÎª0µ½a£¬²½½øÎª1
+% % gcaè¡¨ç¤ºå½“å‰ç»˜å›¾åŒºåŸŸ
+% % xtickè¡¨ç¤ºxè½´åæ ‡åˆ»åº¦ï¼Œåˆ»åº¦ä¸º0åˆ°aï¼Œæ­¥è¿›ä¸º1
 % % https://zhidao.baidu.com/question/2208073897409037028.html
 % set(gca,'xtick',0:1:a,'ytick',0:1:b);
 % 
-% % ÕÏ°­ÎïÌî³äÎªºÚÉ«
+% % éšœç¢ç‰©å¡«å……ä¸ºé»‘è‰²
 % for i=1:a/length-1
 %     for j=1:b/length-1
 %         if(J(i,j)==0)
 %             y=[i,i,i+1,i+1]*length;
 %             x=[j,j+1,j+1,j]*length;
-%             % ²Î¿¼Á´½Ó£ºhttps://ww2.mathworks.cn/help/matlab/ref/fill.html?searchHighlight=fill&s_tid=srchtitle
-%             % k´ú±í'black'£¨»ò 'k'£©£¬Ò²¿ÉÒÔÊ¹ÓÃ'black'
+%             % å‚è€ƒé“¾æ¥ï¼šhttps://ww2.mathworks.cn/help/matlab/ref/fill.html?searchHighlight=fill&s_tid=srchtitle
+%             % kä»£è¡¨'black'ï¼ˆæˆ– 'k'ï¼‰ï¼Œä¹Ÿå¯ä»¥ä½¿ç”¨'black'
 %             h=fill(x,y,'k');
 %             hold on
 %         end

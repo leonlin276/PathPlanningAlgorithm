@@ -1,5 +1,5 @@
 function [xTarget,yTarget,MAP,Map] = SetAimPoint(xStart,yStart,MAP,Map)
-%%µØÍ¼ÉÏÑ¡ÔñÄ¿±êµã
+%%åœ°å›¾ä¸Šé€‰æ‹©ç›®æ ‡ç‚¹
 % pause(0.1);
 % h=msgbox('Please Select the Target using the Left Mouse button in the space');
 % uiwait(h,5);

@@ -1,20 +1,20 @@
 function [xStart,yStart,MAP,Map] = SetStartPoint(MAP,Map)
-%%µØÍ¼ÉÏÑ¡ÔñÆğÊ¼Î»ÖÃ
+%%åœ°å›¾ä¸Šé€‰æ‹©èµ·å§‹ä½ç½®
 % pause(0.1);
 % h=msgbox('Please Select the Vehicle initial position using the Left Mouse button');
-% uiwait(h,5);%³öÏÖ5ÃëºóÏûÊ§
+% uiwait(h,5);%å‡ºç°5ç§’åæ¶ˆå¤±
 % if ishandle(h) == 1
 %     delete(h);
 % end
 % xlabel('Please Select the Vehicle initial position ','Color','black');
 but=0;
-while (but ~= 1) %·´¸´Ö´ĞĞ³ı·Çµã×ó¼ü
-    [xval,yval,but]=ginput(1);%Â¼ÈëÕâ¸öÊó±ê×ó¼ü
-    xval=floor(xval);%µã´¦Ïò¸ºÎŞÇî·½ÏòËÄÉáÎåÈë
+while (but ~= 1) %åå¤æ‰§è¡Œé™¤éç‚¹å·¦é”®
+    [xval,yval,but]=ginput(1);%å½•å…¥è¿™ä¸ªé¼ æ ‡å·¦é”®
+    xval=floor(xval);%ç‚¹å¤„å‘è´Ÿæ— ç©·æ–¹å‘å››èˆäº”å…¥
     yval=floor(yval);
 end
 xStart=xval;%Starting Position
 yStart=yval;%Starting Position
 Map.start=[xStart,yStart];
 % MAP(xval,yval) = 0;
- plot(xval,yval,'bo');%»­¸öÈ¦
+ plot(xval,yval,'bo');%ç”»ä¸ªåœˆ
