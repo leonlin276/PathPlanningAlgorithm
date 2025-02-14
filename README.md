@@ -88,7 +88,7 @@ To see an example of the algorithm in action, run Main.m with the provided test 
 3. **Setting Start and Target Points**:
    - The start and target points are set interactively on the grid map.
 
-4. **A* Algorithm Execution**:
+4. **A\* Algorithm Execution**:
    - The A* algorithm is executed to find the shortest path from the start point to the target point.
 
 5. **Path Retrieval and Visualization**:
